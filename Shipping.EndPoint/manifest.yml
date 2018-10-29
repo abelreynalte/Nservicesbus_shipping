@@ -1,0 +1,13 @@
+﻿---
+applications:
+- name: shippingendpoint
+  memory: 128MB
+  path: bin\Debug\netcoreapp2.1\publish
+  buildpack: https://github.com/cloudfoundry/dotnet-core-buildpack.git
+  instances: 1
+  disk_quota: 2GB
+  stack: cflinuxfs2
+  no-route: true    
+  health-check-type: process
+  services:
+  - nservicesbus-rmq
